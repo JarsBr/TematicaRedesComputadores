@@ -13,7 +13,7 @@ def binary_to_string(binary_message):
     chars = [binary_message[i:i+8] for i in range(0, len(binary_message) -1, 8)]
     return ''.join(chr(int(char, 2)) for char in chars)
 
-def transmit_with_error_noise(binary_message, error_rate = 0.05):
+def transmit_with_error_noise(binary_message, error_rate):
     """
     Introduz um erro aleatório na mensagem binária.
     """
@@ -41,8 +41,11 @@ def check_parity(binary_message):
 # TESTES
 
 # original_message = input("Digite sua mensagem:")
-original_message = "Camanda de rede"
+original_message = "Enlace"
+error_rate = 0.03
 binary_message = string_to_binary(original_message)
+
+print(f'Método de verificação: Paridade \nMessage: {original_message} \nError Rate: {error_rate}')
 
 count_message_with_erro = 0
 count_parity_detected_erro = 0
@@ -53,7 +56,7 @@ for x in range(loop_row):
     original_parity = add_parity_bit(binary_message)
 
     # Simula transmissão com erro
-    corrupted_message_parity = transmit_with_error_noise(original_parity)
+    corrupted_message_parity = transmit_with_error_noise(original_parity, error_rate)
 
     # print(f"Mensagem original: {original_message}")
     # print(f"Mensagem recebida: {binary_to_string(corrupted_message_parity)}")
