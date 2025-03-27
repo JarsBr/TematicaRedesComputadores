@@ -38,11 +38,10 @@ def check_parity(binary_message):
     """
     return not binary_message.count('1') % 2 == 0
 
-# TESTES
 
 # original_message = input("Digite sua mensagem:")
-original_message = "Enlace"
-error_rate = 0.03
+original_message = "Temática em Redes de Computadores"
+error_rate = 0.06
 binary_message = string_to_binary(original_message)
 
 print(f'Método de verificação: Paridade \nMessage: {original_message} \nError Rate: {error_rate}')

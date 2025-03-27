@@ -13,7 +13,7 @@ def binary_to_string(binary_message):
     chars = [binary_message[i:i+8] for i in range(0, len(binary_message), 8)]
     return ''.join(chr(int(char, 2)) for char in chars)
 
-def transmit_with_error_noise(binary_message, error_rate=0.01):
+def transmit_with_error_noise(binary_message, error_rate):
     """
     Introduz um erro aleatório na mensagem binária.
     """
@@ -47,13 +47,16 @@ def verify_checksum(binary_message, received_checksum, chunk_size=8):
     checksum += int(received_checksum, 2)
     return (checksum & 0xFF) == 0xFF  # Se a soma com o checksum for 0xFF, está correto
 
-# TESTES
-original_message = "Camada de rede"
+# original_message = input("Digite sua mensagem:")
+original_message = "Temática em Redes de Computadores"
+error_rate = 0.06
 binary_message = string_to_binary(original_message)
 
 count_message_with_erro = 0
 count_checksum_detected_error = 0
-loop_row = 1000
+loop_row = 100
+
+print(f'Método de verificação: Checksum \nMessage: {original_message} \nError Rate: {error_rate}')
 
 for x in range(loop_row):
     # Calcula checksum antes da transmissão
@@ -61,7 +64,7 @@ for x in range(loop_row):
     message_with_checksum = binary_message + checksum
 
     # Simula transmissão com erro
-    corrupted_message_with_checksum = transmit_with_error_noise(message_with_checksum)
+    corrupted_message_with_checksum = transmit_with_error_noise(message_with_checksum, error_rate)
     corrupted_binary_message = corrupted_message_with_checksum[:-8]
     received_checksum = corrupted_message_with_checksum[-8:]
 

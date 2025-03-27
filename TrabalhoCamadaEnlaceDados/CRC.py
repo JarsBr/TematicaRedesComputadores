@@ -13,7 +13,7 @@ def binary_to_string(binary_message):
     chars = [binary_message[i:i+8] for i in range(0, len(binary_message), 8)]
     return ''.join(chr(int(char, 2)) for char in chars)
 
-def transmit_with_error_noise(binary_message, error_rate=0.005):
+def transmit_with_error_noise(binary_message, error_rate):
     """
     Introduz um erro aleatório na mensagem binária.
     """
@@ -68,20 +68,23 @@ def check_crc(received_message, generator="1101"):
     remainder = mod2div(received_message, generator)
     return int(remainder, 2) == 0
 
-# TESTES
-original_message = "Camada de rede"
+# original_message = input("Digite sua mensagem:")
+original_message = "Temática em Redes de Computadores"
+error_rate = 0.06
 binary_message = string_to_binary(original_message)
 
 count_message_with_erro = 0
 count_crc_detected_error = 0
 loop_row = 100
 
+print(f'Método de verificação: CRC \nMessage: {original_message} \nError Rate: {error_rate}')
+
 for x in range(loop_row):
     # Calcula CRC antes da transmissão
     crc_encoded_message = encode_crc(binary_message)
 
     # Simula transmissão com erro
-    corrupted_message_crc = transmit_with_error_noise(crc_encoded_message)
+    corrupted_message_crc = transmit_with_error_noise(crc_encoded_message, error_rate)
 
     # Verifica o CRC
     if not check_crc(corrupted_message_crc):
