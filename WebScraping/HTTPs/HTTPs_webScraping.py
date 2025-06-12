@@ -20,3 +20,7 @@ print(title.replace("\n", ""))
 
 description = soup_https.find("div", id="rich-text-a486a0a632").text
 print(description)
+
+with open("WebScraping/HTTPs/site_https.txt", "w", encoding="utf-8") as f:
+    f.write(f"# {title}\n\n")
+    f.write(f"{description}\n")

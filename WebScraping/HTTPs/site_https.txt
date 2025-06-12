@@ -1,0 +1,33 @@
+# 
+                                    
+
+
+
+  
+    O que é rede de computadores?
+
+
+
+
+
+
+    
+
+
+                                
+
+
+Seja o internet protocol (IP), Ethernet, LAN sem fio (WLAN) ou padrões de comunicação celular, todas as redes de computadores seguem protocolos de comunicação - conjuntos de regras que cada nó da rede deve seguir para compartilhar e receber dados. Os protocolos também dependem de gateways para permitir que dispositivos incompatíveis se comuniquem (um computador Windows tentando acessar servidores Linux, por exemplo)
+Muitas redes modernas são executadas em modelos TCP/IP, que incluem quatro camadas de rede.
+ 
+Camada de acesso à rede. Também chamada de camada de link de dados ou camada física, a camada de acesso à rede de uma rede TCP/IP inclui a infraestrutura de rede (componentes de hardware e software) necessárias para a interface com o meio de rede. Ela lida com a transmissão física de dados — usando Ethernet e protocolos como o protocolo de resolução de endereços (ARP) — entre dispositivos na mesma rede.
+Camada de Internet. A camada de Internet é responsável pelo endereçamento lógico, roteamento e encaminhamento de pacotes. Ele depende principalmente do protocolo IP e do Internet Control Message Protocol (ICMP), que gerencia o endereçamento e o roteamento de pacotes em diferentes redes.
+Camada de transporte. A camada de transporte TCP/IP permite a transferência de dados entre as camadas superior e inferior da rede. Utilizando protocolos TCP e UDP, também fornece mecanismos para verificação de erros e controle de fluxo.
+
+ O TCP é um protocolo baseado em conexão geralmente mais lento, porém mais confiável do que o UDP. O UDP é um protocolo sem conexão mais rápido que o TCP, mas não oferece transferência garantida. Os protocolos UDP facilitam a transmissão de pacotes para aplicativos urgentes (como streaming de vídeo e plataformas de jogos) e pesquisas DNS.
+Camada de aplicativo. A camada de aplicação do TCP/IP utiliza HTTP, FTP, Post Office Protocol 3 (POP3), SMTP, sistema de nomes de domínio (DNS) e SSH para fornecer serviços de rede diretamente às aplicações. Ele também gerencia todos os protocolos que suportam aplicações de usuário. 
+
+Embora o TCP/IP seja mais diretamente aplicável à rede, o modelo OSI (Open Systems Interconnection, Interconexão de Sistemas Abertos), às vezeschamado de modelo de referência OSI, também teve um impacto significativo na rede de computadores e na ciência da computação, de modo geral.
+O OSI é um modelo conceitual que divide a comunicação em rede em sete camadas abstratas (em vez de quatro), fornecendo uma base teórica que ajuda engenheiros e desenvolvedores a entender as complexidades da comunicação em rede. O principal valor do modelo OSI está em sua utilidade educacional e em seu papel como estrutura conceitual para projetar novos protocolos, garantindo que eles possam interoperar com sistemas e tecnologias existentes.
+No entanto, o foco prático e a aplicabilidade do modelo TCP/IP no mundo real tornaram-no a espinha dorsal das redes modernas. Seu design robusto e escalável e sua abordagem de camada horizontal impulsionaram o crescimento explosivo da internet, acomodando bilhões de dispositivos e grandes quantidades de tráfego de dados.
+

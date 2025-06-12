@@ -20,3 +20,7 @@ print(title)
 
 description = soup_http.find("div", class_="wrapper style1").text
 print(description)
+
+with open("WebScraping/HTTP/site_http.txt", "w", encoding="utf-8") as f:
+    f.write(f"# {title}\n\n")
+    f.write(f"{description}\n")
