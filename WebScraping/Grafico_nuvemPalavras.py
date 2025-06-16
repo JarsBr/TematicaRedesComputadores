@@ -9,7 +9,7 @@ arquivo_http  = "WebScraping/HTTP/site_http.txt"
 stopwords = set(STOPWORDS)
 stopwords.update([
     "de", "da", "do", "em", "para", "e", "a", "o", "que", "com", 
-    "por", "um", "uma", "é", "os", "as", "não", "se", "na", "no"
+    "por", "um", "uma", "é", "os", "as", "não", "se", "na", "no", "também", "à"
 ])
 
 def gerar_wordcloud(caminho_arquivo):
